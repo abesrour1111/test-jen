@@ -30,5 +30,11 @@ pipeline {
       }
     }
 
+    stage('stage5') {
+      steps {
+        sh 'who'
+      }
+    }
+
   }
 }
