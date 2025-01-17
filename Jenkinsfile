@@ -8,8 +8,25 @@ pipeline {
     }
 
     stage('j2') {
+      parallel {
+        stage('j2') {
+          steps {
+            sh 'free -m'
+          }
+        }
+
+        stage('stage21') {
+          steps {
+            sh 'cat /etc/passwd'
+          }
+        }
+
+      }
+    }
+
+    stage('j3') {
       steps {
-        sh 'free -m'
+        sh 'dpkg -l'
       }
     }
 
